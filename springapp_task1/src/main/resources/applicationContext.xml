@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+          xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:context = "http://www.springframework.org/schema/context"
+          xsi:schemaLocation = "http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+
+    <bean id = "gameBean"
+      class="manina.springcourse.AdventureGame">
+    </bean>
+
+    <bean id = "gameBean1"
+          class="manina.springcourse.LogicalGame">
+    </bean>
+
+    <bean id = "gameBean2"
+          class="manina.springcourse.SimulatorGame">
+    </bean>
+
+    <bean id = "gameBean3"
+          class="manina.springcourse.ArcadeGame">
+    </bean>
+
+
+    <bean id = "gameComputer"
+          class="manina.springcourse.СomputerGames"
+          scope="prototype">
+        <property name = "game" ref = "gameBean"/>
+
+        <property name = "levels" value = "5"/>
+        <property name = "numberofdownloads" value = "1000300"/>
+        <property name = "userrating" value = "5"/>
+    </bean>
+
+    <bean id = "gameComputer1"
+          class="manina.springcourse.СomputerGames">
+        <constructor-arg ref = "gameBean1"/>
+    </bean>
+
+    <bean id = "gameComputer2"
+          class="manina.springcourse.СomputerGames">
+        <property name = "game" ref = "gameBean2"/>
+
+        <property name = "levels" value = "5"/>
+        <property name = "numberofdownloads" value = "1000300"/>
+        <property name = "userrating" value = "5"/>
+    </bean>
+
+    <bean id = "gameComputer3"
+          class="manina.springcourse.СomputerGames">
+        <constructor-arg ref = "gameBean3"/>
+    </bean>
+
+</beans>
