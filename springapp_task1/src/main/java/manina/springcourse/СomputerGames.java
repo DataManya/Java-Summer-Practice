@@ -4,15 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 public class СomputerGames {
-    @Autowired
-    @Qualifier("gameComputer")
+   // @Autowired
+   // @Qualifier("gameComputer")
     private Game game;
 
     private int levels;
     private int numberofdownloads;
     private int userrating;
 
-    @Autowired
+   // @Autowired
     public СomputerGames(int levels, int numberofdownloads, int userrating) {
         this.levels = levels;
         this.numberofdownloads = numberofdownloads;
@@ -44,7 +44,7 @@ public class СomputerGames {
     }
 
     //IoC
-    @Autowired
+    //@Autowired
     public СomputerGames(Game game){
         this.game = game;
     }
